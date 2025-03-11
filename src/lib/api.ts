@@ -45,6 +45,20 @@ export const addReaction = async (
   return response.data;
 };
 
+export const getRecentPolls = async (): Promise<Poll[]> => {
+  // This endpoint would need to be added to your backend
+  const response = await api.get<Poll[]>("/polls/recent");
+  return response.data;
+};
+
+export const searchPolls = async (query: string): Promise<Poll[]> => {
+  // This endpoint would need to be added to your backend
+  const response = await api.get<Poll[]>(
+    `/polls/search?q=${encodeURIComponent(query)}`
+  );
+  return response.data;
+};
+
 // Error handling middleware
 api.interceptors.response.use(
   (response) => response,

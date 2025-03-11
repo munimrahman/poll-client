@@ -1,4 +1,5 @@
-// src/components/PollForm.tsx
+"use client";
+
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createPoll } from "@/lib/api";
